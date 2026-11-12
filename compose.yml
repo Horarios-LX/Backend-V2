@@ -1,0 +1,18 @@
+services:
+  root:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: horarioslx-backend
+
+    restart: unless-stopped
+
+    ports:
+      - "127.0.0.1:10000:10000"
+
+    environment:
+      NODE_ENV: production
+      PORT: 10000
+
+    mem_limit: 512m
+    cpus: 0.5
