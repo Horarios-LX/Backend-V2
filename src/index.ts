@@ -11,6 +11,13 @@ app.get('/', async () => {
     };
 });
 
+app.get('/test', async () => {
+    return {
+        status: 'ok',
+        message: 'test works!'
+    }
+})
+
 
 // Start server
 const start = async () => {
