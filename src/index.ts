@@ -1,26 +1,38 @@
 import Fastify from 'fastify';
+import websocket from '@fastify/websocket';
 
-const app = Fastify({
-    logger: false
-});
+// import modules
+import vehicleCollector from "./modules/vehicleCollector/index";
+import vehicleFeed from './modules/vehicleFeed';
 
-app.get('/', async () => {
-    return {
-        status: 'ok',
-        message: 'HorariosLX - v2.0.0'
-    };
-});
-
-app.get('/test', async () => {
-    return {
-        status: 'ok',
-        message: 'test works!'
-    }
-})
-
+const app = Fastify({ logger: false });
 
 // Start server
 const start = async () => {
+    await app.register(websocket);
+
+    app.get('/', async () => {
+        return {
+            status: 'ok',
+            message: 'HorariosLX - v2.0.0'
+        };
+    });
+
+    app.register(vehicleCollector.ROUTES, {
+        prefix: "/vehicles"
+    });
+
+    app.register(vehicleFeed.ROUTES, {
+        prefix: "/vehicles"
+    });
+
+    vehicleCollector.start();
+
+    // stop modules
+    app.addHook("onClose", async () => {
+        vehicleCollector.stop();
+    });
+
     try {
         await app.listen({
             port: Number(process.env.PORT ?? 10000),
