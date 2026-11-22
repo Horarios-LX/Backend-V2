@@ -48,5 +48,9 @@ export default {
 
     stopCollector?.();
     stopCollector = null;
+  },
+
+  cleanup: () => {
+    vehicleFeed.cleanup();
   }
 };
