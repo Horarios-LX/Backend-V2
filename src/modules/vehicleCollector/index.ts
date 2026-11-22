@@ -7,6 +7,7 @@ import {
   startVehicleCollector
 } from "./collector.js";
 import vehicleFeed from "../vehicleFeed/index.js";
+import tempCpTracker from "../tempCpTracker/index.js";
 
 const vehicleCollectorRoutes: FastifyPluginAsync = async (fastify) => {
 
@@ -38,6 +39,7 @@ export default {
 
     stopCollector = startVehicleCollector((data) => {
       vehicleFeed.ON_DATA(data.data);
+      tempCpTracker.ON_DATA(data.data);
     });
   },
 

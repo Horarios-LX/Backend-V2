@@ -1,9 +1,11 @@
 import Fastify from 'fastify';
 import websocket from '@fastify/websocket';
+import cron from "node-cron";
 
 // import modules
 import vehicleCollector from "./modules/vehicleCollector/index";
 import vehicleFeed from './modules/vehicleFeed';
+
 
 const app = Fastify({ logger: false });
 
@@ -31,6 +33,15 @@ const start = async () => {
     // stop modules
     app.addHook("onClose", async () => {
         vehicleCollector.stop();
+    });
+
+    cron.schedule("0 4 * * *", () => {
+        console.log("Performing daily cleanup...");
+        vehicleCollector.cleanup();
+        
+        console.log("Cleanup complete!");
+    }, {
+        timezone: "Europe/Lisbon"
     });
 
     try {

@@ -53,7 +53,7 @@ export async function collectVehicles(): Promise<CollectorResponse> {
             throw new Error("Invalid vehicleCollector response");
         }
 
-        data.data = data.data.filter((vehicle) => vehicle.vehicle_id && (vehicle.agency_id === "LA77N" || vehicle.agency_id === "HF16N")); // filters all vehicles that aren't CMet/41
+        data.data = data.data.filter((vehicle) => vehicle.vehicle_id && (vehicle.agency_id === "LA77N" || vehicle.agency_id === "HF16N" || vehicle.agency_id === "N18KL")); // filters all vehicles that aren't CMet/41 | N18KL - CP
 
         latestData = data;
 

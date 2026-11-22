@@ -3,6 +3,7 @@ import type { FastifyPluginAsync } from "fastify";
 import { VehicleFeedSocketT } from "./types";
 import { VehicleFeedSocket } from "./socket";
 import { TMLApiVehicle } from "../../types/Vehicle";
+import tempCpTracker from "../tempCpTracker";
 
 let connectedClients: Set<VehicleFeedSocketT> = new Set();
 
@@ -52,12 +53,14 @@ export default {
     ON_DATA: vehicleFeedData,
 
     start: () => {
-        console.log("[vehicleFeed] Starting feed...");
-
-
+        //console.log("[vehicleFeed] Starting feed...");
     },
 
     stop: () => {
         //console.log("[vehicleCollector] Stopping collector...");
+    },
+
+    cleanup: () => {
+        tempCpTracker.cleanup();
     }
 };

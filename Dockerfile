@@ -10,6 +10,8 @@ RUN npm ci
 COPY tsconfig.json ./
 COPY src ./src
 
+COPY config ./config
+
 RUN npm run build
 
 ENV NODE_ENV=production
