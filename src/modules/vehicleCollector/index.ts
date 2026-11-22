@@ -52,5 +52,6 @@ export default {
 
   cleanup: () => {
     vehicleFeed.cleanup();
+    tempCpTracker.cleanup();
   }
 };
