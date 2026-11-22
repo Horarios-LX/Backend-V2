@@ -9,6 +9,7 @@ const VEHICLES_TO_TRACK: Record<string, string> = {
     "19206": "OEI 07:51 / ATM 08:05",
     "16410": "ATT 08:26 / ETC 08:37",
     "16504": "ATT 08:05 <CHEGADA>",
+    "39108": "Caxias 23:23 > C. Sodré (TESTE)"
 }
 
 let resultsSent: string[] = []
