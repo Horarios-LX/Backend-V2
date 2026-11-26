@@ -8,7 +8,12 @@ import { WEBHOOK_URL } from "../../../config/cp.json"
 const VEHICLES_TO_TRACK: Record<string, string> = {
     "19206": "OEI 07:51 / ATM 08:05",
     "16410": "ATT 08:26 / ETC 08:37",
-    "16504": "ATT 08:05 <CHEGADA>"
+    "16504": "ATT 08:05 <CHEGADA>",
+    "19208": "OEI 08:01 / ATM 08:20",
+    "19210": "OEI 08:16 / ATM 08:35",
+    "19212": "OEI 08:31 / ATM 08:50",
+    "19508": "OEI/STO 08:10 / ATM 08:29 (S. Pedro)",
+    "19510": "OEI/STO 08:25 / ATM 08:44 (S. Pedro)"
 }
 
 let resultsSent: string[] = []
