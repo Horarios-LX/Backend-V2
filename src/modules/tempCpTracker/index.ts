@@ -13,7 +13,8 @@ const VEHICLES_TO_TRACK: Record<string, string> = {
     "19210": "OEI 08:16 / ATM 08:35",
     "19212": "OEI 08:31 / ATM 08:50",
     "19508": "OEI/STO 08:10 / ATM 08:29 (S. Pedro)",
-    "19510": "OEI/STO 08:25 / ATM 08:44 (S. Pedro)"
+    "19510": "OEI/STO 08:25 / ATM 08:44 (S. Pedro)",
+    "19512": "OEI/STO 08:40 / ATM 08:59 (S. Pedro)"
 }
 
 let resultsSent: string[] = []
