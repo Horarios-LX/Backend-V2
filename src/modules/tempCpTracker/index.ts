@@ -5,7 +5,7 @@ import { TMLApiVehicle } from "../../types/Vehicle";
 import { WEBHOOK_URL } from "../../../config/cp.json"
 
 // vehicles to track
-const VEHICLES_TO_TRACK: Record<string, string> = {
+const VEHICLES_TO_TRACK: Record<string, string> = {} /*{
     "19206": "OEI 07:51 / ATM 08:05",
     "16410": "ATT 08:26 / ETC 08:37",
     "16504": "ATT 08:05 <CHEGADA>",
@@ -15,7 +15,7 @@ const VEHICLES_TO_TRACK: Record<string, string> = {
     "19508": "OEI/STO 08:10 / ATM 08:29 (S. Pedro)",
     "19510": "OEI/STO 08:25 / ATM 08:44 (S. Pedro)",
     "19512": "OEI/STO 08:40 / ATM 08:59 (S. Pedro)"
-}
+}*/
 
 let resultsSent: string[] = []
 
